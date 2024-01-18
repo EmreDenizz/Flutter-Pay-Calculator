@@ -54,7 +54,7 @@ class MyFormState extends State<MyForm> {
                 // Text input: "Number of hours"
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 25),
                   child: TextFormField(
                     controller: numberOfHours,
                     keyboardType: TextInputType.number,
@@ -139,7 +139,7 @@ class MyFormState extends State<MyForm> {
                           backgroundColor: Colors.blue,
                           foregroundColor: Colors.black,
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 50, vertical: 10),
+                              horizontal: 50, vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
