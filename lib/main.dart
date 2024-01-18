@@ -100,6 +100,25 @@ class MyFormState extends State<MyForm> {
           // Output report
 
           // About part
+          Container(
+              margin: const EdgeInsets.only(top: 20),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 50, horizontal: 130),
+              decoration: BoxDecoration(
+                  color: const Color.fromRGBO(38, 38, 38, 0.5),
+                  border: Border.all(color: Colors.white)),
+              child: const Column(children: [
+                Text('Emre Deniz',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold)),
+                Text('301371047',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold)),
+              ]))
         ]));
   }
 }
