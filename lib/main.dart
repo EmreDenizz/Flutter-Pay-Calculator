@@ -94,6 +94,59 @@ class MyFormState extends State<MyForm> {
                   ),
                 ),
                 // Button: "Calculate"
+                Align(
+                    alignment: Alignment.center,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Validate returns true if the form is valid
+                        if (_formKey.currentState!.validate()) {
+                          // Define regularPay, overtimePay, totalPay and tax
+                          var numberOfHoursInput =
+                              int.parse(numberOfHours.text);
+                          var hourlyRateInput = double.parse(hourlyRate.text);
+                          var regularPay = 0.0;
+                          var overtimePay = 0.0;
+                          var totalPay = 0.0;
+                          var tax = 0.0;
+
+                          // Calculate regularPay, overtimePay, totalPay and tax
+                          if (numberOfHoursInput <= 40) {
+                            regularPay = numberOfHoursInput * hourlyRateInput;
+                            totalPay = regularPay;
+                            tax = totalPay * 0.18;
+                          } else {
+                            regularPay = 40 * hourlyRateInput;
+                            overtimePay = (numberOfHoursInput - 40) *
+                                hourlyRateInput *
+                                1.5;
+                            totalPay = regularPay + overtimePay;
+                            tax = totalPay * 0.18;
+                          }
+
+                          // Set output texts
+                          setState(() {
+                            regularPayOutput =
+                                "regular pay:${regularPay.toStringAsFixed(2)}";
+                            overtimePayOutput =
+                                "overtime pay: ${overtimePay.toStringAsFixed(2)}";
+                            totalPayOutput =
+                                "total pay:${totalPay.toStringAsFixed(2)}";
+                            taxOutput = "tax:${tax.toStringAsFixed(2)}";
+                          });
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          foregroundColor: Colors.black,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          textStyle: const TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                      child: const Text('Calculate'),
+                    ))
               ],
             ),
           ),
