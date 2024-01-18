@@ -98,7 +98,23 @@ class MyFormState extends State<MyForm> {
             ),
           ),
           // Output report
-
+          Container(
+              margin: const EdgeInsets.only(top: 20),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 30, horizontal: 110),
+              decoration: BoxDecoration(
+                  color: Colors.white, border: Border.all(color: Colors.white)),
+              child: Column(children: [
+                const Text('Report',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold)),
+                Text(regularPayOutput, style: const TextStyle(fontSize: 16)),
+                Text(overtimePayOutput, style: const TextStyle(fontSize: 16)),
+                Text(totalPayOutput, style: const TextStyle(fontSize: 16)),
+                Text(taxOutput, style: const TextStyle(fontSize: 16))
+              ])),
           // About part
           Container(
               margin: const EdgeInsets.only(top: 20),
