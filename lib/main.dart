@@ -1,3 +1,6 @@
+/// @author Emre Deniz
+/// @date Jan 26, 2024
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -34,11 +37,11 @@ class MyFormState extends State<MyForm> {
   TextEditingController numberOfHours = TextEditingController();
   TextEditingController hourlyRate = TextEditingController();
 
-  // Define output result texts
-  String regularPayOutput = "regular pay: ";
-  String overtimePayOutput = "overtime pay: ";
-  String totalPayOutput = "total pay: ";
-  String taxOutput = "tax: ";
+  // Define initial output result texts
+  String regularPayOutput = "regular pay:";
+  String overtimePayOutput = "overtime pay:";
+  String totalPayOutput = "total pay:";
+  String taxOutput = "tax:";
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +52,11 @@ class MyFormState extends State<MyForm> {
           Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Text input: "Number of hours"
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 25),
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                   child: TextFormField(
                     controller: numberOfHours,
                     keyboardType: TextInputType.number,
@@ -75,7 +77,7 @@ class MyFormState extends State<MyForm> {
                 // Text input: "Hourly rate"
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                   child: TextFormField(
                     controller: hourlyRate,
                     keyboardType: TextInputType.number,
@@ -170,7 +172,7 @@ class MyFormState extends State<MyForm> {
               ])),
           // About part
           Container(
-              margin: const EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 40),
               padding:
                   const EdgeInsets.symmetric(vertical: 50, horizontal: 130),
               decoration: BoxDecoration(
