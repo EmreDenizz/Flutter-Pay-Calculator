@@ -33,7 +33,7 @@ class MyForm extends StatefulWidget {
 }
 
 class MyFormState extends State<MyForm> {
-  final _formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   TextEditingController numberOfHours = TextEditingController();
   TextEditingController hourlyRate = TextEditingController();
 
@@ -45,12 +45,12 @@ class MyFormState extends State<MyForm> {
 
   @override
   Widget build(BuildContext context) {
-    // Build a form widget using the _formKey
+    // Build a form widget using the formKey
     return Container(
         color: const Color.fromRGBO(38, 38, 38, 0.4),
         child: Column(children: [
           Form(
-            key: _formKey,
+            key: formKey,
             child: Column(
               children: [
                 // Text input: "Number of hours"
@@ -101,10 +101,10 @@ class MyFormState extends State<MyForm> {
                     child: ElevatedButton(
                       onPressed: () {
                         // Validate returns true if the form is valid
-                        if (_formKey.currentState!.validate()) {
+                        if (formKey.currentState!.validate()) {
                           // Define regularPay, overtimePay, totalPay and tax
                           var numberOfHoursInput =
-                              int.parse(numberOfHours.text);
+                              double.parse(numberOfHours.text);
                           var hourlyRateInput = double.parse(hourlyRate.text);
                           var regularPay = 0.0;
                           var overtimePay = 0.0;
