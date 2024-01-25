@@ -1,5 +1,5 @@
-/// @author Emre Deniz
-/// @date Jan 26, 2024
+// @author Emre Deniz
+// @date Jan 26, 2024
 
 import 'package:flutter/material.dart';
 
